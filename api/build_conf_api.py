@@ -20,7 +20,7 @@ class BuildConfAPI(CustomRequester):
     def check_query_with_build_conf(self, expected_status=HTTPStatus.OK):
         return self.send_request("GET", f"/app/rest/buildQueue", expected_status=expected_status)
 
-    #Метод по отправки запроса по получению инфы о конкретном билде
+    #Метод по отправке запроса по получению инфы о конкретном билде
     def get_build_conf(self, build_conf_id, expected_status=HTTPStatus.OK):
         return self.send_request("GET", f"/app/rest/buildTypes/id:{build_conf_id}", expected_status=expected_status)
 
@@ -31,7 +31,6 @@ class BuildConfAPI(CustomRequester):
     #Метод по копированию билд конфигурации
     def create_build_conf_copy(self, build_conf_data, project_id, expected_status=HTTPStatus.OK):
         return self.send_request("POST", f"/app/rest/projects/{project_id}/buildTypes", data=build_conf_data, expected_status=expected_status)
-
 
     #Логика для проверки создания билд конфигурации и его удаления
     def clean_up_build(self, build_conf_id):

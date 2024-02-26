@@ -1,7 +1,6 @@
 from custom_requester.custom_requester import CustomRequester
 
 
-#класс для авторизации, которые наследуется от класса custom_requester
 class AuthAPI(CustomRequester):
 #Метод по получению токена
     def auth_and_get_csrf(self, user_creds):

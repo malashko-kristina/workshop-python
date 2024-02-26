@@ -14,7 +14,6 @@ from resources.user_creds import SuperAdminCreds
 from utilis.data_generator import DataGenerator
 
 
-#Фикстура для создания и передачи юзер сессии
 
 @pytest.fixture
 def user_session():
@@ -49,8 +48,6 @@ def super_admin(user_session):
     #(в нашем случае он создает юзеров)
 
 
-#Фикстура, создающая юзера от имени супер админа
-
 @pytest.fixture(params=[Roles.SYSTEM_ADMIN, Roles.PROJECT_ADMIN, Roles.PROJECT_DEVELOPER, Roles.PROJECT_VIEWER])
 def user_create(user_session, super_admin):
     created_users_pool = []
@@ -66,6 +63,7 @@ def user_create(user_session, super_admin):
 
     for username in created_users_pool:
         super_admin.api_manager.user_api.delete_user(username)
+
 
 #Project Fixtures
 @pytest.fixture(params=[DataGenerator.fake_build_id(), DataGenerator.fake_name(), DataGenerator.incorrect_id_1(),

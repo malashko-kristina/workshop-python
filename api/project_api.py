@@ -12,12 +12,11 @@ class ProjectAPI(CustomRequester):
     def create_copy_project(self, project_data, expected_status=HTTPStatus.OK):
         return self.send_request("POST", "/app/rest/projects", data=project_data, expected_status=expected_status)
 
-    #Метод для отправки запроса для проверки, что проект создался,
-    #используем точно такой же эндпоинт, так как будет проверять по всему списку созданных проектов
-
+    #Метод для отправки запроса для проверки, что проект создался по всему списку созданных проектов
     def get_project(self, expected_status=HTTPStatus.OK):
         return self.send_request("GET", "/app/rest/projects", expected_status=expected_status)
 
+   #метод для отправки запроса для получения данных проекта по локатору
     def get_project_by_locator(self, locator, expected_status=HTTPStatus.OK):
         return self.send_request("GET", f"/app/rest/projects/{locator}", expected_status=expected_status)
 

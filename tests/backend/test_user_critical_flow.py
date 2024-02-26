@@ -11,7 +11,7 @@ class TestProjectCreate:
         @allure.feature('Управление проектами и билд конфигурациями')
         @allure.story('Создание проекта и билд конфигурации с последующем для нее запуском под разными ролями')
         @allure.severity(allure.severity_level.CRITICAL)
-        @allure.link('https://example.com/docs/create_project', name='Документация')
+        @allure.link('https://example.com/docs/create_project', name='Документация-26')
         @allure.issue('https://issue.tracker/project/123', name='Баг-трекер')
         @allure.testcase('https://testcase.manager/testcase/456', name='Тест-кейс')
         @allure.title('Проверка юзер флоу по созданию проекта, билд конфигурации и ее запуску')
